@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-4">
-            <span className="gradient-text font-bold text-lg">Bishal Paul</span>
+            <span className="racing-text font-bold text-lg">🏁 BISHAL PAUL</span>
             <span className="text-muted-foreground">•</span>
-            <span className="text-muted-foreground">Statistician & Data Scientist</span>
+            <span className="text-muted-foreground uppercase tracking-wider">F1 Data Scientist</span>
           </div>
 
           <div className="flex items-center space-x-6">
@@ -36,8 +36,8 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p className="flex items-center justify-center gap-1">
             © {currentYear} Bishal Paul. Built with 
-            <Heart className="h-4 w-4 text-red-500" /> 
-            using React & TypeScript
+            <Heart className="h-4 w-4 text-primary" /> 
+            using React & TypeScript | 🏎️ Racing to Excellence
           </p>
         </div>
       </div>

@@ -80,19 +80,19 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 section-fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            <span className="gradient-text">Featured Projects</span>
+        <div className="text-center mb-16 racing-fade-in">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 font-racing">
+            <span className="racing-text">🏆 CHAMPIONSHIP PROJECTS</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of data science and machine learning projects demonstrating 
-            expertise in statistical modeling, deep learning, and real-world problem solving.
+            🏁 A podium showcase of data science and machine learning projects demonstrating 
+            championship-level expertise in statistical modeling, deep learning, and real-world problem solving.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="project-card p-6 stagger-animation flex flex-col h-full">
+            <div key={index} className="racing-card p-6 speed-stagger flex flex-col h-full">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <project.icon className="h-6 w-6 text-primary" />
@@ -110,13 +110,13 @@ const Projects = () => {
               </p>
 
               <div className="space-y-4">
-                <div className="bg-primary/5 rounded-lg p-3">
-                  <div className="text-sm font-medium text-primary mb-2">Key Metrics</div>
-                  <div className="text-sm text-muted-foreground">{project.metrics}</div>
+                <div className="bg-primary/10 rounded-lg p-3">
+                  <div className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">🏁 Performance</div>
+                  <div className="text-sm text-muted-foreground font-semibold">{project.metrics}</div>
                 </div>
 
                 <div>
-                  <div className="text-sm font-medium mb-2">Technologies</div>
+                  <div className="text-sm font-medium mb-2 uppercase tracking-wider">⚙️ Tech Stack</div>
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.slice(0, 3).map((tech, techIndex) => (
                       <Badge key={techIndex} variant="secondary" className="text-xs">
@@ -132,7 +132,7 @@ const Projects = () => {
                 </div>
 
                 <div>
-                  <div className="text-sm font-medium mb-2">Highlights</div>
+                  <div className="text-sm font-medium mb-2 uppercase tracking-wider">🎯 Key Features</div>
                   <div className="space-y-1">
                     {project.highlights.slice(0, 2).map((highlight, hlIndex) => (
                       <div key={hlIndex} className="flex items-start gap-2">
@@ -157,7 +157,7 @@ const Projects = () => {
                   </Button>
                   <Button 
                     size="sm" 
-                    className="skill-badge text-white"
+                    className="f1-badge text-white"
                     asChild
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -167,7 +167,7 @@ const Projects = () => {
                   </Button>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 

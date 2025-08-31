@@ -42,22 +42,22 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 section-fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            <span className="gradient-text">Skills & Expertise</span>
+        <div className="text-center mb-16 racing-fade-in">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 font-racing">
+            <span className="racing-text">⚡ RACING SKILLS & TECH STACK</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive skill set in statistics, data science, and machine learning 
-            with hands-on experience in modern frameworks and tools.
+            🏁 High-performance skill set in statistics, data science, and machine learning 
+            with turbocharged experience in modern frameworks and racing-speed tools.
           </p>
         </div>
 
         {/* Skill Categories */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="project-card p-6 stagger-animation">
+            <div key={index} className="racing-card p-6 speed-stagger">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
+                <div className="p-3 bg-primary/20 rounded-lg">
                   <category.icon className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -71,19 +71,19 @@ const Skills = () => {
                   <Badge 
                     key={skillIndex} 
                     variant="outline" 
-                    className="skill-badge text-white border-none hover:scale-105 transition-transform"
+                    className="f1-badge text-white border-none hover:scale-105 transition-transform"
                   >
                     {skill}
                   </Badge>
                 ))}
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 
-        {/* Expertise Levels */}
-        <Card className="project-card p-8 section-fade-in">
-          <h3 className="text-2xl font-semibold mb-8 text-center">Core Expertise Areas</h3>
+        {/* F1 Performance Metrics */}
+        <div className="racing-card p-8 racing-fade-in">
+          <h3 className="text-2xl font-semibold mb-8 text-center uppercase tracking-wider">🏎️ PERFORMANCE DASHBOARD</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {expertiseAreas.map((area, index) => (
               <div key={index} className="space-y-3">
@@ -91,16 +91,16 @@ const Skills = () => {
                   <span className="font-medium">{area.name}</span>
                   <span className="text-sm text-muted-foreground">{area.level}%</span>
                 </div>
-                <div className="w-full bg-muted rounded-full h-2">
+                <div className="w-full bg-muted rounded-full h-3">
                   <div 
-                    className="bg-hero-gradient h-2 rounded-full transition-all duration-1000 ease-out"
+                    className="bg-racing-gradient h-3 rounded-full transition-all duration-1000 ease-out racing-pulse"
                     style={{ width: `${area.level}%` }}
                   ></div>
                 </div>
               </div>
             ))}
           </div>
-        </Card>
+        </div>
       </div>
     </section>
   );

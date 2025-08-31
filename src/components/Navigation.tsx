@@ -46,11 +46,11 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-lg border-b border-border z-50">
+    <nav className="fixed top-0 w-full bg-background/90 backdrop-blur-lg border-b border-border z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="gradient-text font-bold text-xl">
-            Bishal Paul
+          <div className="racing-text font-bold text-xl font-racing">
+            🏁 BISHAL PAUL
           </div>
 
           {/* Desktop Navigation */}

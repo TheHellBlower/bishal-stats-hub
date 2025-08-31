@@ -44,57 +44,57 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 section-fade-in">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            <span className="gradient-text">About Me</span>
+        <div className="text-center mb-16 racing-fade-in">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 font-racing">
+            <span className="racing-text">🏁 ABOUT THE CHAMPION</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A passionate statistician and data scientist pursuing advanced studies at IIT Kanpur, 
-            with a strong foundation in mathematical statistics and machine learning applications.
+            🏎️ A champion statistician and data scientist racing through advanced studies at IIT Kanpur, 
+            with a turbocharged foundation in mathematical statistics and machine learning applications.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Education Timeline */}
-          <div className="space-y-8 stagger-animation">
+          {/* F1 Education Timeline */}
+          <div className="space-y-8 speed-stagger">
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="h-6 w-6 text-primary" />
-              <h3 className="text-2xl font-semibold">Education</h3>
+              <h3 className="text-2xl font-semibold uppercase tracking-wider">🏆 RACING EDUCATION</h3>
             </div>
 
             <div className="space-y-6">
               {education.map((edu, index) => (
-                <Card key={index} className="project-card p-6">
+                <div key={index} className="racing-card p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h4 className="font-semibold text-lg">{edu.degree}</h4>
                       <p className="text-primary font-medium">{edu.institution}</p>
                     </div>
-                    <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
+                    <Badge variant="outline" className="bg-primary/20 text-primary border-primary f1-badge">
                       {edu.year}
                     </Badge>
                   </div>
                   <p className="text-muted-foreground">{edu.description}</p>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Achievements & Memberships */}
-          <div className="space-y-8 stagger-animation">
-            {/* Achievements */}
+          {/* F1 Achievements & Memberships */}
+          <div className="space-y-8 speed-stagger">
+            {/* Championship Achievements */}
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <Award className="h-6 w-6 text-primary" />
-                <h3 className="text-2xl font-semibold">Scholastic Achievements</h3>
+                <h3 className="text-2xl font-semibold uppercase tracking-wider">🏅 CHAMPIONSHIP ACHIEVEMENTS</h3>
               </div>
 
               <div className="space-y-4">
                 {achievements.map((achievement, index) => (
-                  <Card key={index} className="project-card p-6">
+                  <div key={index} className="racing-card p-6">
                     <h4 className="font-semibold text-lg mb-2">{achievement.title}</h4>
                     <p className="text-muted-foreground">{achievement.description}</p>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </div>
@@ -103,10 +103,10 @@ const About = () => {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <Users className="h-6 w-6 text-primary" />
-                <h3 className="text-2xl font-semibold">Memberships & Activities</h3>
+                <h3 className="text-2xl font-semibold uppercase tracking-wider">🏁 TEAM & ACTIVITIES</h3>
               </div>
 
-              <Card className="project-card p-6">
+              <div className="racing-card p-6">
                 <div className="space-y-3">
                   {memberships.map((membership, index) => (
                     <div key={index} className="flex items-center gap-3">
@@ -115,7 +115,7 @@ const About = () => {
                     </div>
                   ))}
                 </div>
-              </Card>
+              </div>
             </div>
           </div>
         </div>

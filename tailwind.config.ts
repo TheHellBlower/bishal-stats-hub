@@ -56,22 +56,24 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				mono: ['JetBrains Mono', 'Consolas', 'monospace']
+				mono: ['JetBrains Mono', 'Consolas', 'monospace'],
+				racing: ['Inter', 'system-ui', 'sans-serif']
 			},
 			backgroundImage: {
-				'hero-gradient': 'var(--hero-gradient)',
-				'card-gradient': 'var(--card-gradient)',
-				'text-gradient': 'var(--text-gradient)'
+				'racing-gradient': 'var(--racing-gradient)',
+				'carbon-gradient': 'var(--carbon-gradient)',
+				'speed-gradient': 'var(--speed-gradient)',
+				'checkered-pattern': 'var(--checkered-pattern)'
 			},
 			boxShadow: {
-				'soft': 'var(--shadow-soft)',
-				'medium': 'var(--shadow-medium)',
-				'strong': 'var(--shadow-strong)',
+				'racing': 'var(--shadow-racing)',
+				'carbon': 'var(--shadow-carbon)',
+				'speed': 'var(--shadow-speed)',
 				'glow': 'var(--shadow-glow)'
 			},
 			transitionTimingFunction: {
-				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-				'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+				'speed': 'cubic-bezier(0.4, 0, 0.2, 1)',
+				'racing': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

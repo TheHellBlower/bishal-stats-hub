@@ -2,56 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Professional Portfolio Design System for Bishal Paul */
+/* Formula 1 Racing Theme Design System for Bishal Paul */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 84% 5%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 84% 5%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 5%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Professional Blue to Teal Palette */
-    --primary: 210 100% 40%;
+    /* F1 Racing Color Palette */
+    --primary: 0 84% 50%;        /* Ferrari Racing Red */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 174 100% 36%;
+    --primary-glow: 15 100% 60%; /* Orange McLaren accent */
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 84% 5%;
+    --secondary: 0 0% 15%;       /* Carbon Fiber Dark */
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 210 40% 95%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 0 0% 20%;          /* Dark Carbon */
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 174 100% 36%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 50%;      /* Racing Yellow */
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 210 100% 40%;
+    --border: 0 0% 25%;         /* Carbon Border */
+    --input: 0 0% 20%;
+    --ring: 0 84% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Portfolio-specific design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(210 100% 40%), hsl(174 100% 36%));
-    --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --text-gradient: linear-gradient(135deg, hsl(210 100% 40%), hsl(174 100% 36%));
+    /* F1-specific design tokens */
+    --racing-gradient: linear-gradient(135deg, hsl(0 84% 50%), hsl(0 70% 35%), hsl(0 0% 15%));
+    --carbon-gradient: linear-gradient(145deg, hsl(0 0% 12%), hsl(0 0% 8%), hsl(0 0% 15%));
+    --speed-gradient: linear-gradient(90deg, transparent, hsl(0 84% 50% / 0.3), transparent);
+    --checkered-pattern: 
+      repeating-conic-gradient(hsl(0 0% 100%) 0% 25%, hsl(0 0% 0%) 0% 50%) 50% / 20px 20px;
     
-    /* Professional shadows */
-    --shadow-soft: 0 2px 8px hsl(210 100% 40% / 0.08);
-    --shadow-medium: 0 4px 16px hsl(210 100% 40% / 0.12);
-    --shadow-strong: 0 8px 32px hsl(210 100% 40% / 0.16);
-    --shadow-glow: 0 0 32px hsl(174 100% 36% / 0.2);
+    /* Racing shadows and effects */
+    --shadow-racing: 0 4px 20px hsl(0 84% 50% / 0.3);
+    --shadow-carbon: 0 8px 32px hsl(0 0% 0% / 0.6);
+    --shadow-speed: 0 0 40px hsl(0 84% 50% / 0.4);
+    --shadow-glow: 0 0 60px hsl(15 100% 60% / 0.3);
 
-    /* Smooth transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Dynamic transitions */
+    --transition-speed: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-racing: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 0 0% 98%;
 
@@ -117,78 +119,134 @@
   body {
     @apply bg-background text-foreground font-sans;
     scroll-behavior: smooth;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(0 84% 50% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(15 100% 60% / 0.1) 0%, transparent 50%);
   }
 
-  /* Professional typography styles */
-  .gradient-text {
-    background: var(--text-gradient);
+  /* F1 Racing typography styles */
+  .racing-text {
+    background: var(--racing-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
 
-  .hero-card {
-    background: var(--card-gradient);
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
+  .racing-card {
+    background: var(--carbon-gradient);
+    border: 1px solid hsl(0 0% 25%);
+    box-shadow: var(--shadow-carbon);
+    transition: var(--transition-racing);
+    position: relative;
+    overflow: hidden;
   }
 
-  .hero-card:hover {
-    box-shadow: var(--shadow-medium);
-    transform: translateY(-2px);
+  .racing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--speed-gradient);
+    transition: left 0.5s ease;
   }
 
-  .project-card {
-    background: var(--card-gradient);
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition-spring);
+  .racing-card:hover::before {
+    left: 100%;
   }
 
-  .project-card:hover {
-    box-shadow: var(--shadow-strong);
-    transform: translateY(-4px) scale(1.02);
+  .racing-card:hover {
+    box-shadow: var(--shadow-racing);
+    transform: translateY(-4px);
+    border-color: hsl(0 84% 50% / 0.5);
   }
 
-  .skill-badge {
-    background: var(--hero-gradient);
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition-smooth);
+  .speed-card {
+    background: var(--carbon-gradient);
+    border: 1px solid hsl(0 0% 25%);
+    box-shadow: var(--shadow-carbon);
+    transition: var(--transition-speed);
+    position: relative;
   }
 
-  .skill-badge:hover {
+  .speed-card:hover {
+    box-shadow: var(--shadow-speed);
+    transform: translateY(-2px) scale(1.02);
+    border-color: hsl(0 84% 50% / 0.3);
+  }
+
+  .f1-badge {
+    background: var(--racing-gradient);
+    box-shadow: var(--shadow-racing);
+    transition: var(--transition-speed);
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .f1-badge:hover {
     box-shadow: var(--shadow-glow);
     transform: scale(1.05);
+  }
+
+  .checkered-bg {
+    background: var(--checkered-pattern);
+    opacity: 0.05;
+  }
+
+  .carbon-texture {
+    background: 
+      linear-gradient(45deg, transparent 25%, hsl(0 0% 15% / 0.5) 25%, hsl(0 0% 15% / 0.5) 75%, transparent 75%),
+      linear-gradient(-45deg, transparent 25%, hsl(0 0% 15% / 0.5) 25%, hsl(0 0% 15% / 0.5) 75%, transparent 75%);
+    background-size: 4px 4px;
   }
 }
 
 @layer components {
-  .section-fade-in {
-    animation: fadeInUp 0.6s ease-out;
+  .racing-fade-in {
+    animation: racingFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  @keyframes fadeInUp {
+  @keyframes racingFadeIn {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(40px) rotateX(10deg);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) rotateX(0);
     }
   }
 
-  .stagger-animation {
-    animation: staggerIn 0.8s ease-out;
+  .speed-stagger {
+    animation: speedStagger 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  @keyframes staggerIn {
+  @keyframes speedStagger {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateX(-30px) skewX(-5deg);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0) skewX(0);
+    }
+  }
+
+  .racing-pulse {
+    animation: racingPulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes racingPulse {
+    from {
+      box-shadow: 0 0 20px hsl(0 84% 50% / 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(0 84% 50% / 0.6);
     }
   }
 }
