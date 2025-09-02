@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Github, Mail, ExternalLink, Zap } from 'lucide-react';
-import bishalProfile from '@/assets/bishal-f1-profile.jpg';
+import bishalProfile from '@/assets/bishal-profile-actual.jpg';
 import heroBg from '@/assets/f1-hero-bg.jpg';
 
 const Hero = () => {
